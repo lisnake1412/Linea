@@ -1,0 +1,131 @@
+.wrapper {
+    position: relative;
+    display: flex;
+
+    max-width: 1252px;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    min-height: 96px;
+    z-index: 20;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0px var(--defaultMarginLeftAndRight);
+    cursor: default;
+}
+.logo {
+    z-index: 5;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.menu {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    column-gap: 1.5rem;
+    list-style-type: none;
+}
+.menu-icon {
+    display: none;
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    margin-top: auto;
+    margin-bottom: auto;
+    > img {
+        max-width: 100%;
+        height: 1.5rem;
+        width: 1.5rem;
+        color: transparent;
+    }
+}
+
+@media screen and (max-width: 784px) {
+    .wrapper {
+        padding: 20px 0 30px 0;
+    }
+    .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .menu {
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    .logo {
+        display: inline-block;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .container {
+        flex-direction: row;
+        align-items: baseline;
+        margin: 20px 30px;
+        gap: 0;
+        .menu-icon {
+            display: block;
+        }
+    }
+    .menu {
+        display: none;
+        opacity: 0;
+
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .isMenuShow {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        row-gap: 1.25rem;
+        justify-content: unset;
+
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 11;
+        padding: 2rem 1.5rem;
+        top: 100px;
+        left: 0;
+
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: none;
+        animation: goUp 0.3s ease-out forwards;
+    }
+    .black-background {
+        background-color: black;
+        padding-bottom: 124px;
+    }
+    .logo {
+        position: relative;
+        margin-left: 0;
+        z-index: 3;
+    }
+}
+
+@keyframes goUp {
+    0% {
+        opacity: 0;
+        top: 50%;
+        bottom: 50%;
+    }
+    100% {
+        opacity: 1;
+        top: 100px;
+        bottom: 0;
+    }
+}

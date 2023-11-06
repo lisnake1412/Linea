@@ -1,0 +1,49 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+    --primaryColor: #fe2c55;
+    //default layout
+    --defaultMarginLeftAndRight:65px;
+    --textOpacity: 1;
+    --tw-bg-opacity: 1;
+    --primaryFont: Atyp-Display-light, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a:-webkit-any-link {
+    cursor: context-menu;
+}
+
+html {
+   margin: 0;
+}
+
+body {
+    background-color: rgb(18 18 18/1);
+    color:#fff;
+    line-height: inherit;
+    font-family:  Atyp-Display-light, Verdana, Geneva, Tahoma, sans-serif;
+    font-feature-settings: "ss02" on,"ss06" on,"liga" off;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    outline:none;
+    border:none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+}
+
+

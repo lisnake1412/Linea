@@ -1,0 +1,49 @@
+.wrapper {
+    position: relative;
+}
+
+.container {
+    max-width: 1252px;
+    margin: 0px var(--defaultMarginLeftAndRight);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    
+    > img {
+        position: absolute;
+        top: 3rem;
+        right: 0;
+    }
+}
+
+.top-text {
+    max-width: 44rem;
+    padding-bottom: 2.25rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+    line-height: 1.2;
+    P {
+        padding-bottom: 1rem;
+        font-size: 14px;
+        line-height: 1.25rem;
+        letter-spacing: 0.06em;
+        --tw-text-opacity: 1;
+        color: rgb(97 223 255 / var(--tw-text-opacity));
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    .container {
+        > img {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 784px) {
+    .top-text {
+        > p {
+            text-align: center;
+        }
+    }
+}
+

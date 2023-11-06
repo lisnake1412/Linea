@@ -1,0 +1,212 @@
+.wrapper {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1252px;
+    margin: 0px var(--defaultMarginLeftAndRight);
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 6rem;
+    height: 44.5rem;
+    padding-bottom: 2.25rem;
+}
+
+.left-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-family: var(--primaryFont);
+        font-size: 64px;
+        font-weight: 100;
+        line-height: 70.4px;
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+    }
+    div {
+        display: flex;
+        margin: 36px 0 0 0;
+    }
+}
+
+.right-image {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.bottom-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.bottom-container {
+    width: 100%;
+    padding-bottom: 6rem;
+    max-width: 1252px;
+    > img {
+        position: absolute;
+        display: block;
+        left: -60px;
+        top: -10rem;
+        width: 132px;
+        height: 396px;
+        z-index: 1;
+    }
+}
+
+.text-box {
+    display: flex;
+    position: relative;
+    max-width: 1252px;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: #fff;
+    border-radius: 100px;
+    z-index: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    div:first-child {
+        color: black;
+        max-width: 1000px;
+        font-size: 1.3rem;
+        font-family: var(--primaryFont);
+        font-weight: 100;
+    }
+    div:nth-child(2) {
+        color: black;
+        font-size: 1rem;
+        font-family: var(--primaryFont);
+        p {
+            display: inline;
+        }
+        a {
+            display: inline;
+            color: black;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.bg-img-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 784px) {
+    .left-content {
+        width: initial;
+    }
+    .right-image {
+        display: none;
+    }
+    .bottom-container {
+        > img {
+            display: none;
+        }
+    }
+    .bg-img-mobile {
+        display: block;
+        > div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            > img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: left;
+                object-position: left;
+                color: transparent;
+            }
+        }
+    }
+    .text-box {
+        flex-direction: column;
+        border-radius: 30px;
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .wrapper {
+        position: relative;
+    }
+    .bottom-wrapper {
+        position: static;
+    }
+    .left-container {
+        padding: 3rem 0 0 0;
+        height: auto;
+    }
+    .left-content {
+        h1 {
+            width: 100%;
+            font-size: 2.875rem;
+            font-weight: 600;
+            text-align: left;
+            line-height: 3.2rem;
+        }
+    }
+    .bg-img-mobile {
+        > img {
+            max-width: none;
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: left;
+            object-position: left;
+        }
+    }
+    .text-box {
+        position: static;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        > div:first-child {
+            > h2 {
+                font-size: 2rem;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 783px) {
+    .text-box {
+        h2 {
+            min-width: 220px;
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .wrapper {
+        position: relative;
+    }
+    .bottom-wrapper {
+        position: static;
+        .bottom-container {
+            margin: 0 auto;
+            > img {
+                left: 0;
+                top: 63%;
+            }
+        }
+    }
+    .text-box {
+        h2 {
+            min-width: 250px;
+        }
+    }
+}

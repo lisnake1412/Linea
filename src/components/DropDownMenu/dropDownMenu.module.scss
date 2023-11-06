@@ -1,0 +1,123 @@
+.container {
+    display: inline-block;
+    &:hover {
+        .round-icon {
+            background-color: rgb(97 223 255 / var(--tw-bg-opacity));
+            border-color: rgb(97 223 255 / var(--tw-bg-opacity));
+        }
+        .drop-down-content {
+            opacity: 1;
+            z-index: 20;
+        }
+    }
+}
+
+.round-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 100%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1px solid rgb(255 255 255 / var(--textOpacity));
+}
+
+.text {
+    display: inline-block;
+    color: rgb(255 255 255 / var(--textOpacity));
+}
+
+.drop-down-container {
+    padding-top: 0.5rem;
+}
+
+.drop-down-content {
+    position: absolute;
+    opacity: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 29 29 / var(--tw-bg-opacity));
+    --tw-border-opacity: 1;
+    border: 1px solid rgb(80 80 80 / var(--tw-border-opacity));
+    border-radius: 0.125rem;
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+    ul {
+        display: flex;
+        row-gap: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+
+        > li {
+            list-style: none;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+            div {
+                color: rgb(255 255 255 / var(--textOpacity));
+            }
+        }
+    }
+}
+
+.small-list {
+    display: flex;
+    color: rgb(192 192 192/1);
+    padding-left: 1rem;
+    align-items: center;
+    font-size: 1rem;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 784px) {
+    .round-icon {
+        display: none;
+    }
+}
+@media screen and (max-width: 580px) {
+    .container {
+        .drop-down-content {
+            display: none;
+        }
+        &:hover {
+            .drop-down-content {
+                display: block;
+            }
+        }
+    }
+    .drop-down-container {
+        &:last-child {
+            .drop-down-content {
+                top: 100px;
+            }
+        }
+    }
+    .drop-down-content {
+        position: static;
+        right: 30px;
+        border: none;
+        background-color: transparent;
+        li {
+            font-size: 0.7rem;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .round-icon {
+        display: inline-block;
+    }
+    .small-list {
+        font-size: 16px;
+    }
+}
